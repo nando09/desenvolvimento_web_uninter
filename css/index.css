@@ -64,6 +64,12 @@ section .home p{
     font-size: 40px;
 }
 
+section .home p span{
+    text-align: center; /* Centralizar texto */
+    font-size: 18px;
+}
+
+
 /* Tela sobre mim */
 section.about{
     display: grid; /* GRID para o section class about */
