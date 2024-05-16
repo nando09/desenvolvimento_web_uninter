@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernando Batista</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="container">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">Sobre mim</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a class="active" href="contact.html">Contato</a>
+      </nav>
+      <section>
+        <div class="contact">
+          <h4>Contato: &nbsp;</h4>
+          <form method="post" id="formulario">
+            <input name="nome" type="text" placeholder="Nome" required>
+            <select name="selecionar" required>
+              <option value="selecionar">Selecionar</option>
+              <option value="naosei">Não sei o que por</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+            </select>
+            <input type="number" name="telefone" placeholder="Telefone" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <button>Enviar</button>
+          </form>
+        </div>
+      </section>
+      <script>
+        const form = document.querySelector("#formulario");
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          const formData = new FormData(form);
+
+          // Acessa os valores do formulário
+          const name = formData.get('nome');
+          const email = formData.get('email');
+          const selecionar = formData.get('selecionar');
+          const telefone = formData.get('telefone');
+
+          alert("Nome: " + name + ", Selecionar: " + selecionar + ", Telefone: " + telefone + ", Email: " + email)
+        });
+      </script>
+  </body>
+
+</html>
+
+
+
+
+

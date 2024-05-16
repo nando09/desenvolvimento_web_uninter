@@ -1,0 +1,257 @@
+/*Isso garante que o preenchimento e a borda sejam incluídos na largura e altura totais dos elementos.*/
+* {
+    box-sizing: border-box;
+}
+
+/* --------------- Default */
+body {
+    font: 2rem sans-serif;
+    margin: 0;
+    background-color: #074358;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 10vh 90vh;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;  /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+nav a{
+    padding: 10px;
+    width: 15%;
+    font: bold 20px sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+nav a:hover, nav a.active{
+    background-color: #D7D6A5;
+    color: #074358;
+}
+
+
+/* --------------- Tela Home */
+
+section.home{
+    padding: 20px;
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+section .home{
+    width: 100%;
+    height: 100%;
+    background-color: #D7D6A5;
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    color: #074358;
+}
+
+section .home p{
+    text-align: center; /* Centralizar texto */
+    font-size: 40px;
+}
+
+/* Tela sobre mim */
+section.about{
+    display: grid; /* GRID para o section class about */
+    grid-template-columns: 100vw; /* Uma coluna */
+    grid-template-rows: 25vh 65vh; /* Uma linha */
+}
+
+section.about .principal{
+    text-align: center;
+    text-transform: uppercase;
+    color: #f1f1f1;
+    background-color: #458985;
+}
+
+section.about .principal p{
+    font-size: 18px;
+}
+
+section.about .box{
+    display: grid;
+    grid-template-columns: 33vw 34vw 33vw;
+    grid-template-rows: 100%;
+    font-size: 20px;
+}
+
+/* Criar um style para varios elementos */
+section.about .box .box1, section.about .box .box2, section.about .box .box3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+section.about .box .box1{
+    background-color: #A55C55;
+    color: #D7D6A5;
+}
+
+section.about .box .box2{
+    background-color: #074358;
+    color: #A55C55;
+}
+
+section.about .box .box3{
+    background-color: #D7D6A5;
+    color: #074358;
+}
+
+
+/* Tela portfolio */
+section .portfolio{
+    width: 100%; /* Largura 100% do espaço */
+    height: 100%; /* Altura 100% do espaço */
+    background-color: #458985;
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;   /* Centraliza verticalmente */
+    color: #DBA67B;
+}
+
+section .portfolio ul, section .portfolio ul a{
+    padding: 0;
+    list-style-type: none;
+    color: #074358;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+section .portfolio ul a:hover{
+    color: #D7D6A5;
+}
+
+/* Tela contato */
+section .contact{
+    width: 100%;
+    height: 100%;
+    background-color: #DBA67B;
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;   /* Centraliza verticalmente */
+    color: #074358;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 40px;
+    background-color: #074358;
+    border-radius: 20px;
+}
+
+form input, form select, form button{
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    font-size: 20px;
+    border: none;
+    color: #074358;
+}
+
+form button{
+    background-color: #D7D6A5;
+}
+
+/* Tela no maximo 1000px */
+@media only screen and (max-width: 1000px) {
+    /* --------------------------------------------------------- Default */
+    nav{
+        display: flex;
+        justify-content: center;  /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        font-size: 20px;
+    }    
+
+    nav a{
+        font-size: 14px;
+    }
+
+    /* --------------------------------------------------------- Home */
+    section.about .principal{
+        font-size: 20px;
+    }
+
+    section.about .principal p{
+        font-size: 15px;
+    }
+
+    section.about .box{
+        font-size: 17px;
+    }
+
+    section.about .box .box1, section.about .box .box2, section.about .box .box3{
+        padding: 10px;        
+    }
+
+}
+
+
+/* Tela no maximo 700px */
+@media only screen and (max-width: 700px) {
+    /* --------------------------------------------------------- Default */
+    nav{
+        display: flex;
+        justify-content: space-around;  /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 0;
+        width: 40%;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 20vh 80vh;
+    }
+
+    /* --------------------------------------------------------- Home */
+    section.about{
+        display: grid; /* GRID para o section class about */
+        grid-template-columns: 100vw; /* Uma coluna */
+        grid-template-rows: 15vh 65vh; /* Uma linha */
+    }
+
+    section.about .box{
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 22vh 21vh 22vh;
+        font-size: 20px;
+    }
+
+    section.about .principal, section.about .principal{
+        font-size: 10px;
+    }
+
+    section.about .box{
+        font-size: 17px;
+    }
+
+    section.about .box .box1, section.about .box .box2, section.about .box .box3 {
+        padding: 0;
+        font-size: 11px;
+    }
+
+    section .contact {
+        flex-direction: column;
+    }
+}
